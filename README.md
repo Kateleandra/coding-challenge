@@ -10,9 +10,9 @@
 
 - This is a Linux-based project.
 - Technologies used:
-  - Docker
   - Python
   - Flask
+  - Docker
 
 ## Nature of end-product
 
