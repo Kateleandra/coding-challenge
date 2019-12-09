@@ -44,3 +44,9 @@ DISABLE “martim.ferreira”
 ```
 
 Automation of new co-workers access to internal systems by adding or removing access via Cron Job once a day from a base file.
+
+---
+
+## Documentation
+
+For API documentation head to [API](/API/README.md)

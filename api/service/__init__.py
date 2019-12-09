@@ -1,9 +1,10 @@
-from API.Service.passwd_validator import is_valid
-from API.Service.login_validator import find_login
-from API.Service.Repository import update_file
+from api.service.passwd_validator import is_valid
+from api.service.login_validator import find_login
+from api.service.repository import update_file
 
 
 def add_user(name, login, password):
+    """function for adding new user login"""
     if find_login(login):
         response = "Login already informed", 400
     else:
@@ -18,6 +19,7 @@ def add_user(name, login, password):
 
 
 def disable_user(login):
+    """function for disable user login"""
     if find_login(login):
         response = "Login already informed", 400
     else:

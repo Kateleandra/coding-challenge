@@ -3,6 +3,7 @@ from base64 import b64decode
 
 
 def decode(pwd):
+    """base64 string decoder"""
     try:
         return str(b64decode(pwd))[2:-1]
     except:

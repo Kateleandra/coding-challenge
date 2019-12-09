@@ -24,7 +24,7 @@ def read_file() -> list:
 
 def update_file(line: str) -> None:
     """Input data into a new line in the current date file"""
-    file = get_file_name()
+    file_name = get_file_name()
 
-    with open(file, "a", encoding="utf-8") as f:
-        f.write(f"{line}\n")
+    with open(file_name, "a", encoding="utf-8") as file:
+        file.write(f"{line}\n")

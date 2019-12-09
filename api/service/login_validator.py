@@ -1,4 +1,4 @@
-from API.Service.Repository import update_file, read_file
+from api.service.repository import read_file
 
 
 def get_users() -> dict:
@@ -21,11 +21,4 @@ def find_login(login: str) -> bool:
     """Find a user login in current file"""
     user_dict = get_users()
 
-    return True if login in user_dict.keys() else False
-
-    # TODO: uncomment if find is needed to enabled-only users
-    # if login in user_dict.keys():
-    #     if user_dict[login] == "ADD":
-    #         return True
-
-    # return False
+    return bool(login in user_dict.keys())

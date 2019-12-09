@@ -10,7 +10,8 @@ RUN pip install flask
 
 VOLUME [ "/tmp", "/tmp" ]
 
-ENV FLASK_APP=/app/API/__init__.py
+ENV FLASK_APP=/app/api/__init__.py
+ENV FLASK_ENV=development
 
 EXPOSE 8080
 
