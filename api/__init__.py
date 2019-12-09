@@ -14,18 +14,26 @@ def hello():
 @APP.route("/user", methods=["POST", "DELETE"])
 def user_mod():
     """/user route is a both POST and DELETE endpoint for updating user"""
-    if request.method == "POST":
-        try:
+    try:
+        missing_param = False
+
+        login = request.get_json()["login"]
+        if not login:
+            missing_param = True
+
+        if request.method == "POST":
             name = request.get_json()["name"]
-            login = request.get_json()["login"]
             password = request.get_json()["password"]
-            return add_user(name, login, password)
-        except KeyError:
-            return ("malformed request syntax", 400)
+            if not name or not login or not password:
+                missing_param = True
+
+        if missing_param:
+            return ("empty parameter values are not allowed", 400)
+    except KeyError:
+        return ("malformed request syntax", 400)
+
+    if request.method == "POST":
+        return add_user(name, login, password)
 
     if request.method == "DELETE":
-        try:
-            login = request.get_json()["login"]
-            return disable_user(login)
-        except KeyError:
-            return ("malformed request syntax", 400)
+        return disable_user(login)
