@@ -1,4 +1,4 @@
-from Repository import update_file, read_file
+from API.Service.Repository import update_file, read_file
 
 
 def get_users() -> dict:

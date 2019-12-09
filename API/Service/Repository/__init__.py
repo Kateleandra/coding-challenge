@@ -17,7 +17,7 @@ def read_file() -> list:
     try:
         with open(file, "r") as file:
             return file.readlines()
-    except FileNotFoundError as not_found:
+    except FileNotFoundError:
         open(file, "x")
         return ""
 

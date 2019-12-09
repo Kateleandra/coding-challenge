@@ -1,30 +1,27 @@
-from passwd_validator import is_valid
-from login_validator import find_login
-from Repository import update_file
+from API.Service.passwd_validator import is_valid
+from API.Service.login_validator import find_login
+from API.Service.Repository import update_file
 
 
 def add_user(name, login, password):
     if find_login(login):
-        return "Login already informed"
+        response = "Login already informed", 400
     else:
         pwd = is_valid(password)
         if pwd:
             update_file(f'ADD "{name}", "{login}", "{pwd}"')
-            return "user set to be created"
+            response = "User set to be created", 202
         else:
-            return "invalid format password!"
+            response = "Invalid format password!", 400
+
+    return response
 
 
 def disable_user(login):
     if find_login(login):
-        return "Login already informed"
+        response = "Login already informed", 400
     else:
         update_file(f'DISABLE "{login}"')
-        return f"set to be disabled"
+        response = "Login set to be disabled", 202
 
-
-if __name__ == "__main__":
-    print(add_user("Carla Alves Souza", "carla.souza", "U3Vwb3J0ZTEyMw=="))
-    print(add_user("Mateus Santos Lima", "mateus.lima1", "QWJjZDIzNEowMQ=="))
-    print(add_user("Mateus Santos Lima", "mateus.lima2", "QWJjZDIzN"))
-    print(disable_user("martim.ferreira"))
+    return response
