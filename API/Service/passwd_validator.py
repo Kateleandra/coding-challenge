@@ -19,7 +19,4 @@ def is_valid(password: str) -> bool:
 
     password = decode(password)
 
-    if re.match(regex, password):
-        return True
-    else:
-        return False
+    return password if re.match(regex, password) else ""

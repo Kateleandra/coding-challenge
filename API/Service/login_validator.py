@@ -23,7 +23,7 @@ def find_login(login: str) -> bool:
 
     return True if login in user_dict.keys() else False
 
-    # TODO: uncomment if find to enable only users
+    # TODO: uncomment if find is needed to enabled-only users
     # if login in user_dict.keys():
     #     if user_dict[login] == "ADD":
     #         return True
