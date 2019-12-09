@@ -33,7 +33,7 @@ docker run -d --restart always -it -v /tmp:/tmp -p 8080:8080/tcp flask-app:lates
 or using "--rm" if is needed to run once and the container doesn't need to be save after stopped
 
 ```terminal
-docker run -d --rm -it -v /tmp:/tmp -p 8080:8080/tcp flask-app:latest
+docker run -d --rm -it -v /tmp:/tmp -p 8080:8080 flask-app:latest
 ```
 
 ---
@@ -81,3 +81,6 @@ The API can be requested via many different interfaces, I.E.: _Postman Client_
     ```
 
     Be sure to send all parameters and a valid **Base64** password.
+    Pay attention to the API Ip, it's 0.0.0.0 as a default route that points to the default route, which is, in this case the host machine IP. 
+    
+    Make sure to allow the port 8080 thought host's firewall. I.E: **sudo ufw allow 8080** if the host machine is _ubuntu_.

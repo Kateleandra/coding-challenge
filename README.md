@@ -50,3 +50,13 @@ Automation of new co-workers access to internal systems by adding or removing ac
 ## Documentation
 
 For API documentation head to [API](/api/README.md)
+
+---
+
+## TODO's
+
+Incoming steps are:
+
+* Implement TDD
+* Write Postman Collection and Automated tests
+* Write CRON Job for add/disable user login
