@@ -49,4 +49,4 @@ Automation of new co-workers access to internal systems by adding or removing ac
 
 ## Documentation
 
-For API documentation head to [API](/API/README.md)
+For API documentation head to [API](/api/README.md)
