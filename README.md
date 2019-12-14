@@ -1,8 +1,8 @@
-# CI&T - Coding Challenge
+# Coding Challenge
 
 ## Programme
 
-> CI&T Application Project for Software Engineer Opening
+> Application Project for Software Engineer Opening
 
 ---
 
@@ -57,6 +57,7 @@ For API documentation head to [API](/api/README.md)
 
 Incoming steps are:
 
-* Implement TDD
-* Write Postman Collection and Automated tests
-* Write CRON Job for add/disable user login
+- Implement TDD
+- Write Postman Collection and Automated tests
+- Write CRON Job for add/disable user login
+- Improve Python Packages and reorganize project
